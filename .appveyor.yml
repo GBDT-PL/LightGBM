@@ -28,6 +28,7 @@ install:
   - set PATH=%MINICONDA%;%MINICONDA%\Scripts;%PATH%
   - set SKLEARN_SITE_JOBLIB=true  # temp fix for joblib warning in examples
   - ps: $env:LGB_VER = (Get-Content VERSION.txt).trim()
+  - gcc --version
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
   - conda create -q -n test-env python=%PYTHON_VERSION% cloudpickle=0.5.6 joblib matplotlib nose numpy pandas pytest python-graphviz scikit-learn scipy
